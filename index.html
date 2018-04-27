@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <!-- ANALYTICS -->
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+
+    <!-- SEO -->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Le French generator 🇫🇷</title>
+    <meta name="description" content="Generate sentences in French." />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- MOBILE -->
+    <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="True" />          
+    <meta name="theme-color" content="#1994d2" />
+    
+    <!-- STYLING -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- SCRIPTING -->
+    <script async src="https://use.fontawesome.com/7a1c961567.js"></script>
+    <script>
+      function clickDownloadButton(platform, position){
+        console.log("Event: Clicked DownloadButton " + platform + " " + position);
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'DownloadButton',
+            eventAction: 'click',
+            eventLabel: platform + ' - ' + position
+          });
+        }
+    </script>
+
+  </head>
+  <body>
+    <header class="">      
+      <section class="main">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <h1>Le French generator 🇫🇷</h1>
+              <p>Generate random text in French.</p>
+              <a class="btn btn-default" onclick="addSentences()">Add some sentences</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section class="text">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div id="french-text">
+
+            </div>
+            <div class="images text-center">
+              <img class="img img-fluid" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/3/3b/Baguette.png/revision/latest?cb=20121119115824" />
+              <img class="img img-fluid" src="https://vignette.wikia.nocookie.net/brickplanet/images/b/bf/French_Hat_Beret.png/revision/latest?cb=20171219033139" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+        
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+    <!-- <script src="js/typewriter.js"></script> -->
+    <script src="js/french-generator.js"></script>
+  
+  </body>
+</html>
