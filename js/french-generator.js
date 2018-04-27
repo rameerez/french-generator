@@ -108,8 +108,9 @@ function addSentences(){
   
   for(var i = 0; i<Math.floor((Math.random() * 10) + 1); i++){
     var sentence = "";
-    for(var j=0; j<Math.floor((Math.random() * 30) + 1); j++){
+    for(var j=0; j<Math.floor((Math.random() * 20) + 1); j++){
       var word = french[Math.floor((Math.random() * french.length))];
+      word = randomlyConcatACommonWordWithProbability(word, 0.4);
       if(j == 0){
         word = capitalizeFirstLetter(word);
       }
@@ -126,4 +127,13 @@ function addSentences(){
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function randomlyConcatACommonWordWithProbability(originalWord, percentageOfRandomWords){
+  if(Math.random() < percentageOfRandomWords){
+    return top_common_words[Math.floor((Math.random() * top_common_words.length))] + " " + originalWord;
+  }
+  else{
+    return originalWord;
+  }
 }
