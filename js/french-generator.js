@@ -103,10 +103,14 @@ let top_common_words = [
   "rester"
 ]
 
+$( document ).ready(function() {
+  addSentences();
+});
+
 function addSentences(){
   var text = "";
   
-  for(var i = 0; i<Math.floor((Math.random() * 7) + 1); i++){
+  for(var i = 0; i<Math.floor((Math.random() * 5) + 1); i++){
     var sentence = "";
     for(var j=0; j<Math.floor((Math.random() * 15) + 1); j++){
       var word = french[Math.floor((Math.random() * french.length))];
