@@ -1,4 +1,4 @@
-let french = ['du coup', 'ouais', 'putain', 'baguette', 'croissant', 'vin', 'camembert', 'du coup', 'frenchtech', "merde", "fais chier", "apéro", "boulangerie", "car", "et aussi", "parce que", "voila", "et paf le chien", "à la", "évidemment", "quand même", "carrément", "comme même", "omelette", "du", "fromage", "guillotine", "meilleur", "épicé", "révolution", "saucisson", "grève", "manger", "biere"]
+let french = ['du coup', 'ouais', 'putain', 'baguette', 'croissant', 'vin', 'camembert', 'du coup', 'frenchtech', "merde", "fais chier", "apéro", "boulangerie", "car", "et aussi", "parce que", "voila", "et paf le chien", "à la", "évidemment", "quand même", "carrément", "comme même", "omelette", "du", "fromage", "guillotine", "meilleur", "épicé", "révolution", "saucisson", "grève", "manger", "bière", "disruptif"]
 
 let top_common_words = [
   "le", 
@@ -36,7 +36,7 @@ let top_common_words = [
   "ou",
   "si",
   "leur",
-  "y",
+  "il y a",
   "dire",
   "elle",
   "devoir",
@@ -76,7 +76,7 @@ let top_common_words = [
   "notre",
   "dont",
   "non",
-  "an",
+  // "an",
   "monde",
   "jour",
   "monsieur",
@@ -106,9 +106,9 @@ let top_common_words = [
 function addSentences(){
   var text = "";
   
-  for(var i = 0; i<Math.floor((Math.random() * 10) + 1); i++){
+  for(var i = 0; i<Math.floor((Math.random() * 7) + 1); i++){
     var sentence = "";
-    for(var j=0; j<Math.floor((Math.random() * 20) + 1); j++){
+    for(var j=0; j<Math.floor((Math.random() * 15) + 1); j++){
       var word = french[Math.floor((Math.random() * french.length))];
       word = randomlyConcatACommonWordWithProbability(word, 0.4);
       if(j == 0){
@@ -122,11 +122,21 @@ function addSentences(){
     sentence = sentence.concat('. ');
     text = text.concat(sentence);
   }
-  $("#french-text").after("<p>" + text + "</p>");
+  $("#french-text").after(
+    "<p class='shareable-text' onclick=\"shareSentenceOnTwitter(\'" + text + "\')\">" + 
+    text + 
+    "<span class='share'><i class='fab fa-twitter'></i> Tweet</span>" +
+    "</p>");
 }
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function shareSentenceOnTwitter(sentence){
+  var shareOnTwitterLink = "https://twitter.com/intent/tweet?text=" +
+    "«" + sentence + "»" + " – generated via http://rameerez.com/frenchgenerator @rameerez";
+  window.open(shareOnTwitterLink);
 }
 
 function randomlyConcatACommonWordWithProbability(originalWord, percentageOfRandomWords){

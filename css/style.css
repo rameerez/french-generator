@@ -9,3 +9,30 @@ header{
 #french-text{
   margin-top: 2em;
 }
+
+.share{
+  text-decoration: underline;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: transparent;
+  color:rgba(0, 0, 0, 1);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 0.5em 1em;
+  cursor: pointer;
+  display: inline;
+  transition: all 0.3s ease;
+}
+
+
+.share:hover{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.share:hover{
+  cursor: pointer;
+}
+.shareable-text:hover{
+  text-decoration: underline;
+}
